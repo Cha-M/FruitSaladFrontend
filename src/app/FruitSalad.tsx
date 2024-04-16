@@ -39,7 +39,10 @@ const Account = ({ account, balance, refreshBalances }: AccountProps) =>
     <div className="z-10 w-full max-w-5xl flex-row text-sm lg:flex space-x-2">
       <div className="w-full rounded-lg bg-gray-100 p-4 shadow-md whitespace-nowrap flex-initial">
         No account selected, please connect an account through your{" "}
-        <a href="https://metamask.io/download/">MetaMask</a> wallet to continue.
+        <a href="https://metamask.io/download/">
+          <u>MetaMask</u>
+        </a>{" "}
+        wallet to continue.
       </div>
     </div>
   );
