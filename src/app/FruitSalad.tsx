@@ -4,8 +4,6 @@ import React, { useEffect, useState, FC } from "react";
 import fruitSaladAbi from "./abi/FruitSalad.json";
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import { ethers, Contract, formatEther } from "ethers";
-import Fork from "./fork.svg";
-import Image from "next/image";
 
 declare global {
   interface Window {
@@ -13,7 +11,7 @@ declare global {
   }
 }
 
-const fruitSaladAddress = "0x1fc33Fa1249557C007a6F25f028dC71b1920f3F7";
+const fruitSaladAddress = "0x48c17bc0409C0ab9f9B777D8b068831C9593eEfa";
 
 interface AccountProps {
   account: string | null;
