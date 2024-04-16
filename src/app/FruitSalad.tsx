@@ -4,6 +4,8 @@ import React, { useEffect, useState, FC } from "react";
 import fruitSaladAbi from "./abi/FruitSalad.json";
 import { MetaMaskInpageProvider } from "@metamask/providers";
 import { ethers, Contract, formatEther } from "ethers";
+import Fork from "./fork.svg";
+import Image from "next/image";
 
 declare global {
   interface Window {
