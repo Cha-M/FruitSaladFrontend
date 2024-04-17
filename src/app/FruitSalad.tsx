@@ -59,19 +59,22 @@ interface FruitExchangeProps {
   };
   buyOneSaladFruit(): any;
   makeFruitSalad(): any;
+  defaultAccount: string | null;
 }
 
 const FruitExchange = ({
   saladFruits,
   buyOneSaladFruit,
   makeFruitSalad,
+  defaultAccount,
 }: FruitExchangeProps) => (
   //space-y-2 lg:space-y-0
   <div className="w-full max-w-5xl items-center justify-between text-sm lg:flex mt-2 space-y-2 lg:space-y-0">
     <div className="w-full lg:w-auto">
       <button
+        disabled={defaultAccount === null}
         onClick={buyOneSaladFruit}
-        className="rounded-lg bg-blue-200 hover:bg-blue-100 p-4 font-bold shadow-md w-full lg:w-auto"
+        className="disabled:bg-gray-100 disabled:text-gray-500 rounded-lg bg-blue-200 hover:bg-blue-100 p-4 font-bold shadow-md w-full lg:w-auto"
       >
         Buy fruit
       </button>
@@ -94,8 +97,9 @@ const FruitExchange = ({
       </div>
     </div>
     <button
+      disabled={defaultAccount === null}
       onClick={makeFruitSalad}
-      className="w-full lg:w-auto rounded-lg bg-blue-200 hover:bg-blue-100 p-4 font-bold shadow-md"
+      className="disabled:bg-gray-100 disabled:text-gray-500 w-full lg:w-auto rounded-lg bg-blue-200 hover:bg-blue-100 p-4 font-bold shadow-md"
     >
       Mix fruit
     </button>
@@ -259,6 +263,7 @@ const FruitSalad = () => {
         saladFruits={saladFruits}
         buyOneSaladFruit={buyOneSaladFruit}
         makeFruitSalad={makeFruitSalad}
+        defaultAccount={defaultAccount}
       />
     </div>
   );
