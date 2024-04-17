@@ -21,11 +21,11 @@ interface AccountProps {
 
 const Account = ({ account, balance, refreshBalances }: AccountProps) =>
   account ? (
-    <div className="z-10 w-full max-w-5xl flex-row text-sm lg:flex space-x-2">
-      <div className="w-full rounded-lg bg-gray-100 p-4 shadow-md whitespace-nowrap flex-initial">
+    <div className="w-full flex h-auto flex-col lg:flex-row text-sm lg:space-x-2 space-y-2 lg:space-y-0">
+      <div className="w-full rounded-lg bg-gray-100 p-4 shadow-md break-words md:whitespace-nowrap flex-initial">
         Account: {account}
       </div>
-      <div className="w-full rounded-lg bg-gray-100 p-4 shadow-md whitespace-nowrap flex-initial">
+      <div className="w-full rounded-lg bg-gray-100 p-4 shadow-md lg:whitespace-nowrap flex-initial">
         Balance: {balance}
       </div>
       <button
@@ -36,9 +36,10 @@ const Account = ({ account, balance, refreshBalances }: AccountProps) =>
       </button>
     </div>
   ) : (
-    <div className="z-10 w-full max-w-5xl flex-row text-sm lg:flex space-x-2">
+    //do this styling
+    <div className="w-full max-w-5xl flex-row text-sm lg:flex space-x-2">
       <div className="w-full rounded-lg bg-gray-100 p-4 shadow-md whitespace-nowrap flex-initial">
-        No account selected. Please connect an account through your{" "}
+        No account selected. lease connect an account through your{" "}
         <a href="https://metamask.io/download/">
           <u>MetaMask</u>
         </a>{" "}
@@ -65,11 +66,12 @@ const FruitExchange = ({
   buyOneSaladFruit,
   makeFruitSalad,
 }: FruitExchangeProps) => (
-  <div className="z-10 w-full max-w-5xl items-center justify-between text-sm lg:flex mt-2">
-    <div>
+  //space-y-2 lg:space-y-0
+  <div className="w-full max-w-5xl items-center justify-between text-sm lg:flex mt-2 space-y-2 lg:space-y-0">
+    <div className="w-full lg:w-auto">
       <button
         onClick={buyOneSaladFruit}
-        className="rounded-lg bg-blue-200 hover:bg-blue-100 p-4 font-bold shadow-md"
+        className="rounded-lg bg-blue-200 hover:bg-blue-100 p-4 font-bold shadow-md w-full lg:w-auto"
       >
         Buy fruit
       </button>
@@ -93,7 +95,7 @@ const FruitExchange = ({
     </div>
     <button
       onClick={makeFruitSalad}
-      className="rounded-lg bg-blue-200 hover:bg-blue-100 p-4 font-bold shadow-md"
+      className="w-full lg:w-auto rounded-lg bg-blue-200 hover:bg-blue-100 p-4 font-bold shadow-md"
     >
       Mix fruit
     </button>
@@ -247,7 +249,7 @@ const FruitSalad = () => {
   }, []);
 
   return (
-    <div className="z-10 w-full max-w-5xl flex-col text-sm lg:flex space-y-4">
+    <div className="w-full max-w-5xl flex-col text-sm lg:flex space-y-4">
       <Account
         account={defaultAccount}
         balance={etherBalance}
